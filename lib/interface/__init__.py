@@ -4,7 +4,6 @@ from lib.dctf_web import DCTFWeb
 
 
 class Interface:
-
     planilha = 'DCTF_Web'
     col_nome = 'B'
     col_cnpj = 'D'
@@ -18,7 +17,6 @@ class Interface:
         return sg.Input(k=chave, s=(largura, 1), justification=just, default_text=default)
 
     sg.set_options(font='_ 10')
-    # sg.Print(font='_ 12', keep_on_top=True, size=(45, 20), location=(1461, 102))
 
     @staticmethod
     def layout_arquivo():
@@ -95,9 +93,6 @@ class Interface:
                 )
             elif event == 'Titular':
                 dctf_web.empresa_titular(nome=values['-TITULAR-'], mes=values['-MES-'])
-
-            # sg.Print(f'event => {event}', colors='white on green', erase_all=True)
-            # sg.Print(*[f'    {k} => {values[k]}' for k in values], sep='\n')
 
         window.close()
 
